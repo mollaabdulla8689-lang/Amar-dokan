@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#176b4d">
+<meta name="description" content="সব ধরনের পণ্য কেনাকাটার জন্য আপনার অনলাইন শপ।">
+<title>আমার দোকান | অনলাইন শপ</title>
+<style>
+:root{--green:#176b4d;--green2:#0e543b;--mint:#eaf6ef;--ink:#18231e;--muted:#65736b;--line:#e3e9e5;--white:#fff;--gold:#e7a94a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;color:var(--ink);background:#fbfdfb}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,92%);margin:auto}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-weight:850;font-size:1.25rem;color:var(--green)}.brand .dot{color:var(--gold)}.navlinks{display:flex;align-items:center;gap:18px;color:var(--muted);font-size:.95rem}.cartbtn,.primary,.secondary,.whatsapp{border:0;border-radius:12px;padding:11px 15px;font-weight:750;cursor:pointer}.cartbtn,.primary{background:var(--green);color:white}.primary:hover,.cartbtn:hover{background:var(--green2)}.secondary{background:white;color:var(--green);border:1px solid #b8d5c5}.whatsapp{background:#168c53;color:#fff;width:100%;margin-top:8px}
+.hero{padding:44px 0 34px;background:linear-gradient(120deg,#edf8f0,#fff8ed)}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:28px}.eyebrow{display:inline-block;background:#d9eee1;color:var(--green);font-size:.82rem;font-weight:800;padding:6px 10px;border-radius:99px}h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.13;margin:15px 0}.hero p{color:var(--muted);font-size:1.05rem;line-height:1.75;max-width:560px}.hero-art{min-height:230px;border-radius:26px;background:linear-gradient(135deg,#d7efdf,#f8e4c9);display:grid;place-items:center;font-size:clamp(5rem,12vw,8rem)}.searchrow{display:flex;gap:9px;margin-top:22px;max-width:500px}.searchrow input{min-width:0;flex:1;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:white}
+section{padding:34px 0}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:18px}.sectionhead h2{margin:0;font-size:1.65rem}.sectionhead p{margin:5px 0 0;color:var(--muted)}.categories{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 22px}.chip{border:1px solid var(--line);background:white;border-radius:999px;padding:9px 14px;cursor:pointer}.chip.active{background:var(--green);color:white;border-color:var(--green)}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.product{border:1px solid var(--line);border-radius:18px;background:white;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}.product:hover{transform:translateY(-2px);box-shadow:0 8px 24px #173b2810}.product-art{height:155px;background:var(--mint);display:grid;place-items:center;font-size:3.5rem}.product-info{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}.product h3{font-size:1rem;margin:0}.desc{font-size:.87rem;color:var(--muted);margin:0;line-height:1.5}.price{font-weight:850;color:var(--green);font-size:1.08rem;margin-top:auto}.product button{width:100%;margin-top:5px}
+.note{background:#fff8ed;border:1px solid #f3e4cb;border-radius:16px;padding:16px;color:#654c2a;line-height:1.65}.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.benefit{padding:17px;border:1px solid var(--line);background:#fff;border-radius:16px}.benefit strong{display:block;margin:7px 0}.benefit p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55}
+footer{background:#142d23;color:#e9f3ed;padding:28px 0;margin-top:20px}.footergrid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer p{margin:7px 0;color:#c2d3c8;font-size:.9rem}
+.overlay{display:none;position:fixed;inset:0;background:#0006;z-index:10;justify-content:flex-end}.overlay.open{display:flex}.drawer{background:white;width:min(430px,100%);height:100%;padding:22px;overflow:auto}.drawerhead{display:flex;justify-content:space-between;align-items:center}.drawerhead h2{margin:0}.close{border:0;background:#eef4ef;border-radius:10px;padding:8px 12px}.cartitem{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.cartitem small{display:block;color:var(--muted);margin-top:4px}.qty{display:flex;align-items:center;gap:8px}.qty button{border:1px solid var(--line);background:white;border-radius:8px;padding:4px 9px}.total{display:flex;justify-content:space-between;font-size:1.15rem;font-weight:850;margin:22px 0}.empty{color:var(--muted);padding:28px 0;text-align:center}.hint{font-size:.82rem;color:var(--muted);line-height:1.55}.howto{line-height:1.7;padding-left:22px}.smalllink{color:#c2d3c8;text-decoration:underline}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr}.hero-art{min-height:150px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product-art{height:125px}.navlinks{display:none}.hero{padding-top:30px}.sectionhead{align-items:start;flex-direction:column}.benefits{grid-template-columns:1fr}.nav{min-height:60px}}
+@media(max-width:380px){.products{grid-template-columns:1fr}.product{display:grid;grid-template-columns:100px 1fr}.product-art{height:100%;min-height:130px}.product-info{padding:11px}.searchrow .primary{padding:10px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#"><span class="dot">●</span> <span id="brandName">আমার দোকান</span></a>
+<nav class="navlinks"><a href="#products">পণ্য</a><a href="#about">আমাদের সম্পর্কে</a><a href="#contact">যোগাযোগ</a></nav>
+<button class="cartbtn" onclick="openCart()">🛒 কার্ট (<span id="cartCount">0</span>)</button>
+</div></header>
+<main>
+<div class="hero"><div class="wrap hero-grid">
+<div><span class="eyebrow">আপনার অনলাইন শপে স্বাগতম</span>
+<h1>পছন্দের পণ্য,<br>সহজেই আপনার কাছে।</h1>
+<p>বিভিন্ন ধরনের পণ্য এক জায়গায় খুঁজুন। পছন্দের পণ্য কার্টে যোগ করুন এবং WhatsApp-এ অর্ডারের খসড়া পাঠিয়ে দিন।</p>
+<div class="searchrow"><input id="search" type="search" placeholder="পণ্য খুঁজুন..." aria-label="পণ্য খুঁজুন"><button class="primary" onclick="renderProducts()">খুঁজুন</button></div>
+</div><div class="hero-art" aria-label="শপিং ব্যাগের চিত্র">🛍️</div>
+</div></div>
+<section class="wrap" id="products">
+<div class="sectionhead"><div><h2>আমাদের পণ্য</h2><p>নমুনা পণ্য ও দাম — নিজের পণ্য দিয়ে বদলে নিন</p></div></div>
+<div class="categories" id="categories"></div><div class="products" id="productGrid"></div>
+</section>
+<section class="wrap" id="about"><div class="sectionhead"><div><h2>কেন আমাদের দোকান?</h2><p>এ অংশটি আপনার ব্যবসার নিয়ম অনুযায়ী পরিবর্তন করুন।</p></div></div>
+<div class="benefits"><div class="benefit"><span>📦</span><strong>সহজ অর্ডার</strong><p>পণ্য বেছে নিয়ে অর্ডারের খসড়া WhatsApp-এ পাঠানোর ব্যবস্থা।</p></div><div class="benefit"><span>📱</span><strong>মোবাইলে ব্যবহার সহজ</strong><p>ফোন ও কম্পিউটার—দুই স্ক্রিনের জন্য মানানসই নকশা।</p></div><div class="benefit"><span>🤝</span><strong>সরাসরি যোগাযোগ</strong><p>অর্ডার নিশ্চিত করার আগে ক্রেতার সঙ্গে কথা বলুন।</p></div></div>
+</section>
+<section class="wrap"><div class="note"><strong>প্রকাশ করার আগে গুরুত্বপূর্ণ:</strong> নিচের কোডে <code>SELLER_WHATSAPP</code> সেটিংসে আপনার WhatsApp নম্বর আন্তর্জাতিক ফরম্যাটে দিন—বাংলাদেশের নম্বর হলে যেমন <code>8801XXXXXXXXX</code> (শুরুর 0 বাদ দিয়ে)। পণ্যের নাম ও দামও নিজের তথ্য দিয়ে বদলান। নমুনা পণ্যের দাম বাস্তব মূল্য নয়। নমুনা পণ্যের দাম বাস্তব মূল্য নয়।</div></section>
+</main>
+<footer id="contact"><div class="wrap footergrid"><div><strong id="footerName">আমার দোকান</strong><p>আপনার পছন্দের অনলাইন শপ</p></div><div><strong>যোগাযোগ</strong><p>WhatsApp-এ অর্ডার করুন</p><p>ঠিকানা: আপনার ব্যবসার ঠিকানা যোগ করুন</p></div></div></footer>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()"><aside class="drawer">
+<div class="drawerhead"><h2>আপনার কার্ট</h2><button class="close" onclick="closeCart()">বন্ধ করুন ✕</button></div>
+<div id="cartItems"></div><div class="total"><span>মোট</span><span id="cartTotal">৳০</span></div>
+<button class="whatsapp" onclick="checkoutWhatsApp()">WhatsApp-এ অর্ডার করুন</button>
+<p class="hint">বাটনে চাপলে WhatsApp খুলবে এবং অর্ডারের বার্তা তৈরি হবে। সেখানে বার্তাটি দেখে নিজে Send চাপুন।</p>
+</aside></div>
+<script>
+// দোকানের নাম এবং WhatsApp নম্বর এখানে বদলান। নম্বরে +, স্পেস বা ড্যাশ দেবেন না।
+const SHOP_NAME = "আমার দোকান";
+const SELLER_WHATSAPP = "8801946558689"; // বাংলাদেশের নম্বর 01946558689 থেকে শুরুর 0 বাদ দিয়ে 880 যোগ করা হয়েছে।
+
+// নিজের পণ্যের নাম, দাম, বিভাগ, ইমোজি ও বিবরণ এখানে সম্পাদনা করুন।
+const products=[
+{id:1,name:"কটন টি-শার্ট",category:"পোশাক",price:350,emoji:"👕",desc:"আরামদায়ক দৈনন্দিন পোশাক"},
+{id:2,name:"ক্যাজুয়াল ব্যাগ",category:"ব্যাগ",price:550,emoji:"🎒",desc:"প্রতিদিনের ব্যবহারের জন্য"},
+{id:3,name:"পানির বোতল",category:"ঘর ও জীবনযাপন",price:220,emoji:"🧴",desc:"সহজে বহনযোগ্য বোতল"},
+{id:4,name:"স্পোর্টস জুতা",category:"জুতা",price:950,emoji:"👟",desc:"হাঁটা ও দৈনন্দিন ব্যবহারে"},
+{id:5,name:"হাতঘড়ি",category:"ইলেকট্রনিকস ও অ্যাক্সেসরিজ",price:750,emoji:"⌚",desc:"সাধারণ ও সুন্দর ডিজাইন"},
+{id:6,name:"সানগ্লাস",category:"ফ্যাশন",price:300,emoji:"🕶️",desc:"স্টাইলিশ লুকের জন্য"},
+{id:7,name:"ক্যাপ",category:"পোশাক",price:180,emoji:"🧢",desc:"হালকা ও আরামদায়ক"},
+{id:8,name:"স্যান্ডেল",category:"জুতা",price:280,emoji:"🩴",desc:"প্রতিদিনের ব্যবহারের জন্য"}
+];
+let cart={},activeCategory="সব";
+const money=n=>"৳"+n.toLocaleString("bn-BD");
+document.title=SHOP_NAME+" | অনলাইন শপ";
+document.getElementById("brandName").textContent=SHOP_NAME;
+document.getElementById("footerName").textContent=SHOP_NAME;
+function renderCategories(){const cats=["সব",...new Set(products.map(p=>p.category))];document.getElementById("categories").innerHTML=cats.map(c=>`<button class="chip ${c===activeCategory?"active":""}" onclick="setCategory('${c.replace(/'/g,"\\'")}')">${c}</button>`).join("")}
+function setCategory(c){activeCategory=c;renderCategories();renderProducts()}
+function renderProducts(){const q=document.getElementById("search").value.trim().toLowerCase();const list=products.filter(p=>(activeCategory==="সব"||p.category===activeCategory)&&(p.name.toLowerCase().includes(q)||p.category.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)));document.getElementById("productGrid").innerHTML=list.length?list.map(p=>`<article class="product"><div class="product-art">${p.emoji}</div><div class="product-info"><h3>${p.name}</h3><p class="desc">${p.desc}</p><div class="price">${money(p.price)}</div><button class="secondary" onclick="addToCart(${p.id})">কার্টে যোগ করুন +</button></div></article>`).join(""):'<p>কোনো পণ্য পাওয়া যায়নি। অন্য নামে খুঁজুন।</p>'}
+function addToCart(id){cart[id]=(cart[id]||0)+1;updateCart()}
+function updateCart(){const entries=Object.entries(cart).filter(([id,q])=>q>0);document.getElementById("cartItems").innerHTML=entries.length?entries.map(([id,q])=>{const p=products.find(x=>x.id===+id);return `<div class="cartitem"><div><strong>${p.name}</strong><small>${money(p.price)} × ${q}</small></div><div class="qty"><button aria-label="একটি কমান" onclick="changeQty(${id},-1)">−</button><span>${q}</span><button aria-label="একটি বাড়ান" onclick="changeQty(${id},1)">+</button></div></div>`}).join(""):'<div class="empty">আপনার কার্ট এখনো খালি।</div>';const total=entries.reduce((sum,[id,q])=>sum+products.find(p=>p.id===+id).price*q,0);document.getElementById("cartTotal").textContent=money(total);document.getElementById("cartCount").textContent=entries.reduce((a,[id,q])=>a+q,0)}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];updateCart()}
+function openCart(){updateCart();document.getElementById("overlay").classList.add("open")}
+function closeCart(){document.getElementById("overlay").classList.remove("open")}
+function checkoutWhatsApp(){const entries=Object.entries(cart).filter(([id,q])=>q>0);if(!entries.length){alert("আগে কার্টে পণ্য যোগ করুন।");return}if(!/^8801\d{9}$/.test(SELLER_WHATSAPP)){alert("দোকানের মালিকের WhatsApp নম্বর সেট করা হয়নি। ফাইলের কোডে SELLER_WHATSAPP-এর জায়গায় 8801XXXXXXXXX ফরম্যাটে নম্বর দিন।");return}const lines=entries.map(([id,q])=>{const p=products.find(x=>x.id===+id);return `• ${p.name} × ${q} = ${money(p.price*q)}`});const total=entries.reduce((sum,[id,q])=>sum+products.find(p=>p.id===+id).price*q,0);const message=`আসসালামু আলাইকুম, ${SHOP_NAME}-এ আমি অর্ডার করতে চাই:\n\n${lines.join("\n")}\n\nমোট পণ্যমূল্য: ${money(total)}\n\nআমার নাম:\nডেলিভারি ঠিকানা:\nমোবাইল নম্বর:\n\nদয়া করে ডেলিভারি চার্জ ও মোট মূল্য নিশ্চিত করবেন।`;window.open("https://wa.me/"+SELLER_WHATSAPP+"?text="+encodeURIComponent(message),"_blank","noopener,noreferrer")}
+document.getElementById("search").addEventListener("input",renderProducts);renderCategories();renderProducts();updateCart();
+</script>
+</body>
+</html>
